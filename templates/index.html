@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Audio Mixer</title>
+	<link rel="icon" href="/static/images/bisag-logo.png" type="image/png" sizes="16x16">
+    <meta charset='utf-8'>
+    <script src="/static/js/jquery-3.5.0.js"></script>
+    <link rel="stylesheet" href="/static/css/new_index.css">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/static/css/index.css'>
+    <link rel="stylesheet" href="/static/css/round.css">
+    
+    <style>
+      #but_read{
+        background-color: #aaa;
+      }
+      p{
+      font-family: Arial;
+      }
+      h1{
+      font-family: Arial;
+      }
+      h2{
+      font-family: Arial;
+      }
+      h3{
+      font-family: Arial;
+      }
+      h4{
+      font-family: Arial;
+      }
+      a{
+      font-family: Arial;
+      }
+      .circle {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%; /* the magic */
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            text-align: center;
+            color: white;
+            margin: 0 auto 40px;
+        }
+        input[type=range][orient=vertical]
+        {
+            writing-mode: bt-lr; /* IE */
+            -webkit-appearance: slider-vertical; /* WebKit */
+        }
+    </style>
+
+</head>
+<body >
+    <script src="/static/js/round.js"></script>
+    <script src="/static/js/round1.js"></script> 
+    <script src="/static/js/index.js"></script>
+	<!-- HEADER AND LOGO -->
+<div class="main"  style="width:1825px;background-color: #05445E;min-width: 1825px;min-height: 960px;">
+	<div class="header">
+        <h1 class="virtuallogo">
+        <img class="img1" src="/static/images/bisag-logo.png" float="left" >
+        <img class="img" src="/static/images/Vlab.png" float="right" >
+        </h1>
+        <center>
+            <h1 style="color: rgb(60, 13, 104);font-size: x-large;margin-left: 0px;width: 138px; ">Audio Mixer</h1>
+        </center>
+    </div>
+    
+                                                <!--///////////////////// header ///////////////////////// -->   
+             
+                                                
+   
+    <div class="row">
+
+        <p style="width: 149px;background-color: white;text-align: center;margin-top: 0px;padding-right: 1px;margin-bottom: 4px;">1</p>
+        <center>
+            <p style="font-size: small;height: 3px;margin-left: 120px;color: white;margin-top: -4px;">MIC</p>
+            <img src="/static/images/3pin.png" style="width: 130px;height: 110px;margin-top: -29px;">
+            <p style="font-size: small;height: 3px;margin-left: -112px;color: white;margin-top: -15px;">LINE</p>
+            <img src="/static/images/single_pin.png" style="width: 45px;height: 45px;margin-top: -9px;">
+            <p style="font-size: small;height: 3px;margin-left: -98px;color: white;margin-top: -1px;">INSERT</p>
+            <img src="/static/images/single_pin.png" style="width: 45px;height: 45px;margin-top: -9px;">
+        </center>
+        <center>
+            <p style="font-size: small;height: 3px;margin-left: -112px;color: white;">GAIN</p>
+            <div id="slider1of1"></div>
+        </center>
+        <br>
+
+        <div class="white" style="background-color: white;width: 151px;height: 126px;margin-left: 1px; position: absolute;"></div>
+        <div class="inside1" style="background-color: #05445E;width: 152px;height: 116px;margin-top: 10px; z-index: 9;position: absolute;">
+            <center>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">HF</p>
+                <div id="slider1of2" style="margin-top: 0px;"></div>
+            </center>
+        </div>
+        <br>
+
+        <div class="white2" style="background-color: white;width: 151px;height: 126px;margin-left: 1px; position: absolute;margin-top: 108px;"></div>
+        <div class="inside2" style="background-color: #05445E;width: 152px;height: 116px;margin-top: 118px; z-index: 9;position: absolute;">
+            <center>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">MF</p>
+                <div id="slider1of3" style="margin-top: 0px;"></div>
+                <div id="slider1of4" style="margin-top: 0px;"></div>
+            </center>
+        </div>
+        <br>
+
+        <div class="white3" style="background-color: white;width: 151px;height: 126px;margin-left: 1px; position: absolute;margin-top: 289px;"></div>
+        <div class="inside3" style="background-color: #05445E;width: 152px;height: 116px;margin-top: 299px; z-index: 9;position: absolute;">
+            <center>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">LF</p>
+                <div id="slider1of5" style="margin-top: 0px;"></div>
+            </center>
+        </div>
+        <br>
+        <div class="white4" style="background-color: white;width: 151px;height: 3px;margin-left: 1px; position: absolute;margin-top: 396px;"></div>
+        
+        <div class="inside4" style="background-color: #05445E;width: 152px;height: 116px;margin-top: 399px; z-index: 9;position: absolute;">
+            <center>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">AUX1</p>
+                <div id="slider1of6" style="margin-top: 0px;"></div>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">AUX2</p>
+                <div id="slider1of7" style="margin-top: 0px;"></div>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">PAN</p>
+                <div id="slider1of8" style="margin-top: 0px;"></div>
+            </center>
+        </div>
+        <br>
+        <div class="white5" style="background-color: white;width: 151px;height: 40px;margin-left: 1px;margin-top: 697px;">
+            <p style="font-size: small;height: 0px;float: left;margin-left: 20px;margin-top: 2px; color: black;">PFL</p>
+            <p style="font-size: small;height: 0px;float: right;margin-right: 20px;margin-top: 2px; color: black;">MUTE</p><br>
+            <button id="PFL1" style="height: 20px;width: 45px;float: left;margin-left: 10px;background-color: rgb(252, 252, 252);"></button>
+            <button id="MUTE1" style="height: 20px;width: 45px;float: right;margin-right: 16px;background-color: red;"></button>
+        </div>
+
+        <div class="circle" id="LED1" style="background-color:rgba(129, 19, 19, 0.705);margin-top: 15px;"><br>
+            <p style="font-size: small;height: 0px;color: white;text-align: center;margin-left: -12px;margin-top: 0px;">PEAK</p>
+        </div>
+        <br>
+        <input id="range1" class="input-range" orient="vertical" type="range" step="5" value="-30" min="-30" max="10" style="margin-left: 50px;width: 30px;"><br>
+        <p id="range1output" style="color: white;width: 10px;margin-top: -80px;margin-left: 100px;"></p>
+        <div style="background-color: white;width: 151px;height: 31px;margin-left: 1px; position: absolute;margin-top: 71px;">
+            <p style="font-size: medium;height: 0px;color: black;text-align: center;margin-top: 0px;">1</p>
+        </div>
+        
+        
+    </div>
+    
+    <div class="row">
+        <p style="width: 145px;background-color: white;text-align: center;margin-left: 4px;margin-top: 0px;padding-right: 1px;margin-bottom: 4px;">2</p>
+        <center>
+            <p style="font-size: small;height: 3px;margin-left: 120px;color: white;margin-top: -4px;">MIC</p>
+            <img src="/static/images/3pin.png" style="width: 130px;height: 110px;margin-top: -29px;">
+            <p style="font-size: small;height: 3px;margin-left: -112px;color: white;margin-top: -15px;">LINE</p>
+            <img src="/static/images/single_pin.png" style="width: 45px;height: 45px;margin-top: -9px;">
+            <p style="font-size: small;height: 3px;margin-left: -98px;color: white;margin-top: -1px;">INSERT</p>
+            <img src="/static/images/single_pin.png" style="width: 45px;height: 45px;margin-top: -9px;">
+        </center>
+        <center><p style="font-size: small;height: 3px;margin-left: -112px;color: white;">GAIN</p><div id="slider2of1"></div></center>
+        <br>
+
+        <div class="white" style="background-color: white;width: 151px;height: 126px;margin-left: 1px; position: absolute;"></div>
+        <div class="inside1" style="background-color: #05445E;width: 152px;height: 116px;margin-top: 10px; z-index: 9;position: absolute;">
+            <center>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">HF</p>
+                <div id="slider2of2" style="margin-top: 0px;"></div>
+            </center>
+        </div>
+        <br>
+
+        <div class="white2" style="background-color: white;width: 151px;height: 126px;margin-left: 1px; position: absolute;margin-top: 108px;"></div>
+        <div class="inside2" style="background-color: #05445E;width: 152px;height: 116px;margin-top: 118px; z-index: 9;position: absolute;">
+            <center>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">MF</p>
+                <div id="slider2of3" style="margin-top: 0px;"></div>
+                <div id="slider2of4" style="margin-top: 0px;"></div>
+            </center>
+        </div>
+        <br>
+
+        <div class="white3" style="background-color: white;width: 151px;height: 126px;margin-left: 1px; position: absolute;margin-top: 289px;"></div>
+        <div class="inside3" style="background-color: #05445E;width: 152px;height: 116px;margin-top: 299px; z-index: 9;position: absolute;">
+            <center>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">LF</p>
+                <div id="slider2of5" style="margin-top: 0px;"></div>
+            </center>
+        </div>
+        <br>
+        <div class="white4" style="background-color: white;width: 151px;height: 3px;margin-left: 1px; position: absolute;margin-top: 396px;"></div>
+        
+        <div class="inside4" style="background-color: #05445E;width: 152px;height: 116px;margin-top: 399px; z-index: 9;position: absolute;">
+            <center>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">AUX1</p>
+                <div id="slider2of6" style="margin-top: 0px;"></div>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">AUX2</p>
+                <div id="slider2of7" style="margin-top: 0px;"></div>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">PAN</p>
+                <div id="slider2of8" style="margin-top: 0px;"></div>
+            </center>
+        </div>
+        <br>
+        <div class="white5" style="background-color: white;width: 151px;height: 40px;margin-left: 1px;margin-top: 697px;">
+            <p style="font-size: small;height: 0px;float: left;margin-left: 20px;margin-top: 2px; color: black;">PFL</p>
+            <p style="font-size: small;height: 0px;float: right;margin-right: 20px;margin-top: 2px; color: black;">MUTE</p><br>
+            <button id="PFL2" style="height: 20px;width: 45px;float: left;margin-left: 10px;background-color: rgb(252, 252, 252);"></button>
+            <button id="MUTE2" style="height: 20px;width: 45px;float: right;margin-right: 16px;background-color: red;"></button>
+        </div>
+
+        <div class="circle" id="LED2" style="background-color:rgba(129, 19, 19, 0.705);margin-top: 15px;"><br>
+            <p style="font-size: small;height: 0px;color: white;text-align: center;margin-left: -12px;margin-top: 0px;">PEAK</p>
+        </div>
+        <br>
+        <input id="range2" class="input-range" orient="vertical" type="range" step="5" value="-30" min="-30" max="10" style="margin-left: 50px;width: 30px;"><br>
+        <p id="range2output" style="color: white;width: 10px;margin-top: -80px;margin-left: 100px;"></p>
+        <div style="background-color: white;width: 152px;height: 31px;margin-left: 1px; position: absolute;margin-top: 71px;">
+            <p style="font-size: medium;height: 0px;color: black;text-align: center;margin-top: 0px;">2</p>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <p style="width: 145px;background-color: white;text-align: center;margin-left: 4px;margin-top: 0px;padding-right: 1px;margin-bottom: 4px;">3</p>
+        <center>
+            <p style="font-size: small;height: 3px;margin-left: 120px;color: white;margin-top: -4px;">MIC</p>
+            <img src="/static/images/3pin.png" style="width: 130px;height: 110px;margin-top: -29px;">
+            <p style="font-size: small;height: 3px;margin-left: -112px;color: white;margin-top: -15px;">LINE</p>
+            <img src="/static/images/single_pin.png" style="width: 45px;height: 45px;margin-top: -9px;">
+            <p style="font-size: small;height: 3px;margin-left: -98px;color: white;margin-top: -1px;">INSERT</p>
+            <img src="/static/images/single_pin.png" style="width: 45px;height: 45px;margin-top: -9px;">
+        </center>
+        <center><p style="font-size: small;height: 3px;margin-left: -112px;color: white;">GAIN</p><div id="slider3of1"></div></center>
+        <br>
+
+        <div class="white" style="background-color: white;width: 151px;height: 126px;margin-left: 1px; position: absolute;"></div>
+        <div class="inside1" style="background-color: #05445E;width: 152px;height: 116px;margin-top: 10px; z-index: 9;position: absolute;">
+            <center>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">HF</p>
+                <div id="slider3of2" style="margin-top: 0px;"></div>
+            </center>
+        </div>
+        <br>
+
+        <div class="white2" style="background-color: white;width: 151px;height: 126px;margin-left: 1px; position: absolute;margin-top: 108px;"></div>
+        <div class="inside2" style="background-color: #05445E;width: 152px;height: 116px;margin-top: 118px; z-index: 9;position: absolute;">
+            <center>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">MF</p>
+                <div id="slider3of3" style="margin-top: 0px;"></div>
+                <div id="slider3of4" style="margin-top: 0px;"></div>
+            </center>
+        </div>
+        <br>
+
+        <div class="white3" style="background-color: white;width: 151px;height: 126px;margin-left: 1px; position: absolute;margin-top: 289px;"></div>
+        <div class="inside3" style="background-color: #05445E;width: 152px;height: 116px;margin-top: 299px; z-index: 9;position: absolute;">
+            <center>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">LF</p>
+                <div id="slider3of5" style="margin-top: 0px;"></div>
+            </center>
+        </div>
+        <br>
+        <div class="white4" style="background-color: white;width: 151px;height: 3px;margin-left: 1px; position: absolute;margin-top: 396px;"></div>
+        
+        <div class="inside4" style="background-color: #05445E;width: 152px;height: 116px;margin-top: 399px; z-index: 9;position: absolute;">
+            <center>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">AUX1</p>
+                <div id="slider3of6" style="margin-top: 0px;"></div>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">AUX2</p>
+                <div id="slider3of7" style="margin-top: 0px;"></div>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">PAN</p>
+                <div id="slider3of8" style="margin-top: 0px;"></div>
+            </center>
+        </div>
+        <br>
+        <div class="white5" style="background-color: white;width: 151px;height: 40px;margin-left: 1px;margin-top: 697px;">
+            <p style="font-size: small;height: 0px;float: left;margin-left: 20px;margin-top: 2px; color: black;">PFL</p>
+            <p style="font-size: small;height: 0px;float: right;margin-right: 20px;margin-top: 2px; color: black;">MUTE</p><br>
+            <button id="PFL3" style="height: 20px;width: 45px;float: left;margin-left: 10px;background-color: rgb(252, 252, 252);"></button>
+            <button id="MUTE3" style="height: 20px;width: 45px;float: right;margin-right: 16px;background-color: red;"></button>
+        </div>
+
+        <div class="circle" id="LED3" style="background-color:rgba(129, 19, 19, 0.705);margin-top: 15px;"><br>
+            <p style="font-size: small;height: 0px;color: white;text-align: center;margin-left: -12px;margin-top: 0px;">PEAK</p>
+        </div>
+        <br>
+        <input id="range3" class="input-range" orient="vertical" type="range" step="5" value="-30" min="-30" max="10" style="margin-left: 50px;width: 30px;"><br>
+        <p id="range3output" style="color: white;width: 10px;margin-top: -80px;margin-left: 100px;"></p>
+        <div style="background-color: white;width: 151px;height: 31px;margin-left: 1px; position: absolute;margin-top: 71px;">
+            <p style="font-size: medium;height: 0px;color: black;text-align: center;margin-top: 0px;">3</p>
+        </div>
+        
+    </div>
+
+    <div class="row">
+        <p style="width: 145px;background-color: white;text-align: center;margin-left: 4px;margin-top: 0px;padding-right: 1px;margin-bottom: 4px;">4</p>
+        <center>
+            <p style="font-size: small;height: 3px;margin-left: 120px;color: white;margin-top: -4px;">MIC</p>
+            <img src="/static/images/3pin.png" style="width: 130px;height: 110px;margin-top: -29px;">
+            <p style="font-size: small;height: 3px;margin-left: -112px;color: white;margin-top: -15px;">LINE</p>
+            <img src="/static/images/single_pin.png" style="width: 45px;height: 45px;margin-top: -9px;">
+            <p style="font-size: small;height: 3px;margin-left: -98px;color: white;margin-top: -1px;">INSERT</p>
+            <img src="/static/images/single_pin.png" style="width: 45px;height: 45px;margin-top: -9px;">
+        </center>
+        <center><p style="font-size: small;height: 3px;margin-left: -112px;color: white;">GAIN</p><div id="slider4of1"></div></center>
+        <br>
+
+        <div class="white" style="background-color: white;width: 151px;height: 126px;margin-left: 1px; position: absolute;"></div>
+        <div class="inside1" style="background-color: #05445E;width: 152px;height: 116px;margin-top: 10px; z-index: 9;position: absolute;">
+            <center>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">HF</p>
+                <div id="slider4of2" style="margin-top: 0px;"></div>
+            </center>
+        </div>
+        <br>
+
+        <div class="white2" style="background-color: white;width: 151px;height: 126px;margin-left: 1px; position: absolute;margin-top: 108px;"></div>
+        <div class="inside2" style="background-color: #05445E;width: 152px;height: 116px;margin-top: 118px; z-index: 9;position: absolute;">
+            <center>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">MF</p>
+                <div id="slider4of3" style="margin-top: 0px;"></div>
+                <div id="slider4of4" style="margin-top: 0px;"></div>
+            </center>
+        </div>
+        <br>
+
+        <div class="white3" style="background-color: white;width: 151px;height: 126px;margin-left: 1px; position: absolute;margin-top: 289px;"></div>
+        <div class="inside3" style="background-color: #05445E;width: 152px;height: 116px;margin-top: 299px; z-index: 9;position: absolute;">
+            <center>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">LF</p>
+                <div id="slider4of5" style="margin-top: 0px;"></div>
+            </center>
+        </div>
+        <br>
+        <div class="white4" style="background-color: white;width: 151px;height: 3px;margin-left: 1px; position: absolute;margin-top: 396px;"></div>
+        
+        <div class="inside4" style="background-color: #05445E;width: 152px;height: 116px;margin-top: 399px; z-index: 9;position: absolute;">
+            <center>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">AUX1</p>
+                <div id="slider4of6" style="margin-top: 0px;"></div>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">AUX2</p>
+                <div id="slider4of7" style="margin-top: 0px;"></div>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">PAN</p>
+                <div id="slider4of8" style="margin-top: 0px;"></div>
+            </center>
+        </div>
+        <br>
+        <div class="white5" style="background-color: white;width: 151px;height: 40px;margin-left: 1px;margin-top: 697px;">
+            <p style="font-size: small;height: 0px;float: left;margin-left: 20px;margin-top: 2px; color: black;">PFL</p>
+            <p style="font-size: small;height: 0px;float: right;margin-right: 20px;margin-top: 2px; color: black;">MUTE</p><br>
+            <button id="PFL4" style="height: 20px;width: 45px;float: left;margin-left: 10px;background-color: rgb(252, 252, 252);"></button>
+            <button id="MUTE4" style="height: 20px;width: 45px;float: right;margin-right: 16px;background-color: red;"></button>
+        </div>
+
+        <div class="circle" id="LED4" style="background-color:rgba(129, 19, 19, 0.705);margin-top: 15px;"><br>
+            <p style="font-size: small;height: 0px;color: white;text-align: center;margin-left: -12px;margin-top: 0px;">PEAK</p>
+        </div>
+        <br>
+        <input id="range4" class="input-range" orient="vertical" type="range" step="5" value="-30" min="-30" max="10" style="margin-left: 50px;width: 30px;"><br>
+        <p id="range4output" style="color: white;width: 10px;margin-top: -80px;margin-left: 100px;"></p>
+        <div style="background-color: white;width: 151px;height: 31px;margin-left: 1px; position: absolute;margin-top: 71px;">
+            <p style="font-size: medium;height: 0px;color: black;text-align: center;margin-top: 0px;">4</p>
+        </div>
+        
+    </div>
+
+    <div class="row">
+        <p style="width: 145px;background-color: white;text-align: center;margin-left: 4px;margin-top: 0px;padding-right: 1px;margin-bottom: 4px;">5</p>
+        <center>
+            <p style="font-size: small;height: 3px;margin-left: 120px;color: white;margin-top: -4px;">MIC</p>
+            <img src="/static/images/3pin.png" style="width: 130px;height: 110px;margin-top: -29px;">
+            <p style="font-size: small;height: 3px;margin-left: -112px;color: white;margin-top: -15px;">LINE</p>
+            <img src="/static/images/single_pin.png" style="width: 45px;height: 45px;margin-top: -9px;">
+            <p style="font-size: small;height: 3px;margin-left: -98px;color: white;margin-top: -1px;">INSERT</p>
+            <img src="/static/images/single_pin.png" style="width: 45px;height: 45px;margin-top: -9px;">
+        </center>
+        <center><p style="font-size: small;height: 3px;margin-left: -112px;color: white;">GAIN</p><div id="slider5of1"></div></center>
+        <br>
+
+        <div class="white" style="background-color: white;width: 151px;height: 126px;margin-left: 1px; position: absolute;"></div>
+        <div class="inside1" style="background-color: #05445E;width: 152px;height: 116px;margin-top: 10px; z-index: 9;position: absolute;">
+            <center>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">HF</p>
+                <div id="slider5of2" style="margin-top: 0px;"></div>
+            </center>
+        </div>
+        <br>
+
+        <div class="white2" style="background-color: white;width: 151px;height: 126px;margin-left: 1px; position: absolute;margin-top: 108px;"></div>
+        <div class="inside2" style="background-color: #05445E;width: 152px;height: 116px;margin-top: 118px; z-index: 9;position: absolute;">
+            <center>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">MF</p>
+                <div id="slider5of3" style="margin-top: 0px;"></div>
+                <div id="slider5of4" style="margin-top: 0px;"></div>
+            </center>
+        </div>
+        <br>
+
+        <div class="white3" style="background-color: white;width: 151px;height: 126px;margin-left: 1px; position: absolute;margin-top: 289px;"></div>
+        <div class="inside3" style="background-color: #05445E;width: 152px;height: 116px;margin-top: 299px; z-index: 9;position: absolute;">
+            <center>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">LF</p>
+                <div id="slider5of5" style="margin-top: 0px;"></div>
+            </center>
+        </div>
+        <br>
+        <div class="white4" style="background-color: white;width: 151px;height: 3px;margin-left: 1px; position: absolute;margin-top: 396px;"></div>
+        
+        <div class="inside4" style="background-color: #05445E;width: 152px;height: 116px;margin-top: 399px; z-index: 9;position: absolute;">
+            <center>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">AUX1</p>
+                <div id="slider5of6" style="margin-top: 0px;"></div>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">AUX2</p>
+                <div id="slider5of7" style="margin-top: 0px;"></div>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">PAN</p>
+                <div id="slider5of8" style="margin-top: 0px;"></div>
+            </center>
+        </div>
+        <br>
+        <div class="white5" style="background-color: white;width: 151px;height: 40px;margin-left: 1px;margin-top: 697px;">
+            <p style="font-size: small;height: 0px;float: left;margin-left: 20px;margin-top: 2px; color: black;">PFL</p>
+            <p style="font-size: small;height: 0px;float: right;margin-right: 20px;margin-top: 2px; color: black;">MUTE</p><br>
+            <button id="PFL5" style="height: 20px;width: 45px;float: left;margin-left: 10px;background-color: rgb(252, 252, 252);"></button>
+            <button id="MUTE5" style="height: 20px;width: 45px;float: right;margin-right: 16px;background-color: red;"></button>
+        </div>
+
+        <div class="circle" id="LED5" style="background-color:rgba(129, 19, 19, 0.705);margin-top: 15px;"><br>
+            <p style="font-size: small;height: 0px;color: white;text-align: center;margin-left: -12px;margin-top: 0px;">PEAK</p>
+        </div>
+        <br>
+        <input id="range5" class="input-range" orient="vertical" type="range" step="5" value="-30" min="-30" max="10" style="margin-left: 50px;width: 30px;"><br>
+        <p id="range5output" style="color: white;width: 10px;margin-top: -80px;margin-left: 100px;"></p>
+        <div style="background-color: white;width: 152px;height: 31px;margin-left: 1px; position: absolute;margin-top: 71px;">
+            <p style="font-size: medium;height: 0px;color: black;text-align: center;margin-top: 0px;">5</p>
+        </div>
+        
+    </div>
+
+    <div class="row">
+        <p style="width: 145px;background-color: white;text-align: center;margin-left: 4px;margin-top: 0px;padding-right: 1px;margin-bottom: 4px;">6</p>
+        <center>
+            <p style="font-size: small;height: 3px;margin-left: 120px;color: white;margin-top: -4px;">MIC</p>
+            <img src="/static/images/3pin.png" style="width: 130px;height: 110px;margin-top: -29px;">
+            <p style="font-size: small;height: 3px;margin-left: -112px;color: white;margin-top: -15px;">LINE</p>
+            <img src="/static/images/single_pin.png" style="width: 45px;height: 45px;margin-top: -9px;">
+            <p style="font-size: small;height: 3px;margin-left: -98px;color: white;margin-top: -1px;">INSERT</p>
+            <img src="/static/images/single_pin.png" style="width: 45px;height: 45px;margin-top: -9px;">
+        </center>
+        <center><p style="font-size: small;height: 3px;margin-left: -112px;color: white;">GAIN</p><div id="slider6of1"></div></center>
+        <br>
+
+        <div class="white" style="background-color: white;width: 151px;height: 126px;margin-left: 1px; position: absolute;"></div>
+        <div class="inside1" style="background-color: #05445E;width: 152px;height: 116px;margin-top: 10px; z-index: 9;position: absolute;">
+            <center>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">HF</p>
+                <div id="slider6of2" style="margin-top: 0px;"></div>
+            </center>
+        </div>
+        <br>
+
+        <div class="white2" style="background-color: white;width: 151px;height: 126px;margin-left: 1px; position: absolute;margin-top: 108px;"></div>
+        <div class="inside2" style="background-color: #05445E;width: 152px;height: 116px;margin-top: 118px; z-index: 9;position: absolute;">
+            <center>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">MF</p>
+                <div id="slider6of3" style="margin-top: 0px;"></div>
+                <div id="slider6of4" style="margin-top: 0px;"></div>
+            </center>
+        </div>
+        <br>
+
+        <div class="white3" style="background-color: white;width: 151px;height: 126px;margin-left: 1px; position: absolute;margin-top: 289px;"></div>
+        <div class="inside3" style="background-color: #05445E;width: 152px;height: 116px;margin-top: 299px; z-index: 9;position: absolute;">
+            <center>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">LF</p>
+                <div id="slider6of5" style="margin-top: 0px;"></div>
+            </center>
+        </div>
+        <br>
+        <div class="white4" style="background-color: white;width: 151px;height: 3px;margin-left: 1px; position: absolute;margin-top: 396px;"></div>
+        
+        <div class="inside4" style="background-color: #05445E;width: 152px;height: 116px;margin-top: 399px; z-index: 9;position: absolute;">
+            <center>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">AUX1</p>
+                <div id="slider6of6" style="margin-top: 0px;"></div>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">AUX2</p>
+                <div id="slider6of7" style="margin-top: 0px;"></div>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">PAN</p>
+                <div id="slider6of8" style="margin-top: 0px;"></div>
+            </center>
+        </div>
+        <br>
+        <div class="white5" style="background-color: white;width: 151px;height: 40px;margin-left: 1px;margin-top: 697px;">
+            <p style="font-size: small;height: 0px;float: left;margin-left: 20px;margin-top: 2px; color: black;">PFL</p>
+            <p style="font-size: small;height: 0px;float: right;margin-right: 20px;margin-top: 2px; color: black;">MUTE</p><br>
+            <button id="PFL6" style="height: 20px;width: 45px;float: left;margin-left: 10px;background-color: rgb(252, 252, 252);"></button>
+            <button id="MUTE6" style="height: 20px;width: 45px;float: right;margin-right: 16px;background-color: red;"></button>
+        </div>
+
+        <div class="circle" id="LED6" style="background-color:rgba(129, 19, 19, 0.705);margin-top: 15px;"><br>
+            <p style="font-size: small;height: 0px;color: white;text-align: center;margin-left: -12px;margin-top: 0px;">PEAK</p>
+        </div>
+        <br>
+        <input id="range6" class="input-range" orient="vertical" type="range" step="5" value="-30" min="-30" max="10" style="margin-left: 50px;width: 30px;"><br>
+        <p id="range6output" style="color: white;width: 10px;margin-top: -80px;margin-left: 100px;"></p>
+        <div style="background-color: white;width: 151px;height: 31px;margin-left: 1px; position: absolute;margin-top: 71px;">
+            <p style="font-size: medium;height: 0px;color: black;text-align: center;margin-top: 0px;">6</p>
+        </div>
+        
+    </div>
+
+    <div class="row">
+        <p style="width: 145px;background-color: white;text-align: center;margin-left: 4px;margin-top: 0px;padding-right: 1px;margin-bottom: 4px;">7</p>
+        <center>
+            <p style="font-size: small;height: 3px;margin-left: 120px;color: white;margin-top: -4px;">MIC</p>
+            <img src="/static/images/3pin.png" style="width: 130px;height: 110px;margin-top: -29px;">
+            <p style="font-size: small;height: 3px;margin-left: -112px;color: white;margin-top: -15px;">LINE</p>
+            <img src="/static/images/single_pin.png" style="width: 45px;height: 45px;margin-top: -9px;">
+            <p style="font-size: small;height: 3px;margin-left: -98px;color: white;margin-top: -1px;">INSERT</p>
+            <img src="/static/images/single_pin.png" style="width: 45px;height: 45px;margin-top: -9px;">
+        </center>
+        <center><p style="font-size: small;height: 3px;margin-left: -112px;color: white;">GAIN</p><div id="slider7of1"></div></center>
+        <br>
+
+        <div class="white" style="background-color: white;width: 151px;height: 126px;margin-left: 1px; position: absolute;"></div>
+        <div class="inside1" style="background-color: #05445E;width: 152px;height: 116px;margin-top: 10px; z-index: 9;position: absolute;">
+            <center>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">HF</p>
+                <div id="slider7of2" style="margin-top: 0px;"></div>
+            </center>
+        </div>
+        <br>
+
+        <div class="white2" style="background-color: white;width: 151px;height: 126px;margin-left: 1px; position: absolute;margin-top: 108px;"></div>
+        <div class="inside2" style="background-color: #05445E;width: 152px;height: 116px;margin-top: 118px; z-index: 9;position: absolute;">
+            <center>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">MF</p>
+                <div id="slider7of3" style="margin-top: 0px;"></div>
+                <div id="slider7of4" style="margin-top: 0px;"></div>
+            </center>
+        </div>
+        <br>
+
+        <div class="white3" style="background-color: white;width: 151px;height: 126px;margin-left: 1px; position: absolute;margin-top: 289px;"></div>
+        <div class="inside3" style="background-color: #05445E;width: 152px;height: 116px;margin-top: 299px; z-index: 9;position: absolute;">
+            <center>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">LF</p>
+                <div id="slider7of5" style="margin-top: 0px;"></div>
+            </center>
+        </div>
+        <br>
+        <div class="white4" style="background-color: white;width: 151px;height: 3px;margin-left: 1px; position: absolute;margin-top: 396px;"></div>
+        
+        <div class="inside4" style="background-color: #05445E;width: 152px;height: 116px;margin-top: 399px; z-index: 9;position: absolute;">
+            <center>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">AUX1</p>
+                <div id="slider7of6" style="margin-top: 0px;"></div>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">AUX2</p>
+                <div id="slider7of7" style="margin-top: 0px;"></div>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">PAN</p>
+                <div id="slider7of8" style="margin-top: 0px;"></div>
+            </center>
+        </div>
+        <br>
+        <div class="white5" style="background-color: white;width: 151px;height: 40px;margin-left: 1px;margin-top: 697px;">
+            <p style="font-size: small;height: 0px;float: left;margin-left: 20px;margin-top: 2px; color: black;">PFL</p>
+            <p style="font-size: small;height: 0px;float: right;margin-right: 20px;margin-top: 2px; color: black;">MUTE</p><br>
+            <button id="PFL7" style="height: 20px;width: 45px;float: left;margin-left: 10px;background-color: rgb(252, 252, 252);"></button>
+            <button id="MUTE7" style="height: 20px;width: 45px;float: right;margin-right: 16px;background-color: red;"></button>
+        </div>
+
+        <div class="circle" id="LED7" style="background-color:rgba(129, 19, 19, 0.705);margin-top: 15px;"><br>
+            <p style="font-size: small;height: 0px;color: white;text-align: center;margin-left: -12px;margin-top: 0px;">PEAK</p>
+        </div>
+        <br>
+        <input id="range7" class="input-range" orient="vertical" type="range" step="5" value="-30" min="-30" max="10" style="margin-left: 50px;width: 30px;"><br>
+        <p id="range7output" style="color: white;width: 10px;margin-top: -80px;margin-left: 100px;"></p>
+        <div style="background-color: white;width: 151px;height: 31px;margin-left: 1px; position: absolute;margin-top: 71px;">
+            <p style="font-size: medium;height: 0px;color: black;text-align: center;margin-top: 0px;">7</p>
+        </div>
+
+        
+    </div>
+
+    <div class="row">
+        <p style="width: 145px;background-color: white;text-align: center;margin-left: 4px;margin-top: 0px;padding-right: 1px;margin-bottom: 4px;">8</p>
+        <center>
+            <p style="font-size: small;height: 3px;margin-left: 120px;color: white;margin-top: -4px;">MIC</p>
+            <img src="/static/images/3pin.png" style="width: 130px;height: 110px;margin-top: -29px;">
+            <p style="font-size: small;height: 3px;margin-left: -112px;color: white;margin-top: -15px;">LINE</p>
+            <img src="/static/images/single_pin.png" style="width: 45px;height: 45px;margin-top: -9px;">
+            <p style="font-size: small;height: 3px;margin-left: -98px;color: white;margin-top: -1px;">INSERT</p>
+            <img src="/static/images/single_pin.png" style="width: 45px;height: 45px;margin-top: -9px;">
+        </center>
+        <center><p style="font-size: small;height: 3px;margin-left: -112px;color: white;">GAIN</p><div id="slider8of1"></div></center>
+        <br>
+
+        <div class="white" style="background-color: white;width: 151px;height: 126px;margin-left: 1px; position: absolute;"></div>
+        <div class="inside1" style="background-color: #05445E;width: 152px;height: 116px;margin-top: 10px; z-index: 9;position: absolute;">
+            <center>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">HF</p>
+                <div id="slider8of2" style="margin-top: 0px;"></div>
+            </center>
+        </div>
+        <br>
+
+        <div class="white2" style="background-color: white;width: 151px;height: 126px;margin-left: 1px; position: absolute;margin-top: 108px;"></div>
+        <div class="inside2" style="background-color: #05445E;width: 152px;height: 116px;margin-top: 118px; z-index: 9;position: absolute;">
+            <center>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">MF</p>
+                <div id="slider8of3" style="margin-top: 0px;"></div>
+                <div id="slider8of4" style="margin-top: 0px;"></div>
+            </center>
+        </div>
+        <br>
+
+        <div class="white3" style="background-color: white;width: 151px;height: 126px;margin-left: 1px; position: absolute;margin-top: 289px;"></div>
+        <div class="inside3" style="background-color: #05445E;width: 152px;height: 116px;margin-top: 299px; z-index: 9;position: absolute;">
+            <center>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">LF</p>
+                <div id="slider8of5" style="margin-top: 0px;"></div>
+            </center>
+        </div>
+        <br>
+        <div class="white4" style="background-color: white;width: 151px;height: 3px;margin-left: 1px; position: absolute;margin-top: 396px;"></div>
+        
+        <div class="inside4" style="background-color: #05445E;width: 152px;height: 116px;margin-top: 399px; z-index: 9;position: absolute;">
+            <center>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">AUX1</p>
+                <div id="slider8of6" style="margin-top: 0px;"></div>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">AUX2</p>
+                <div id="slider8of7" style="margin-top: 0px;"></div>
+                <p style="font-size: small;height: 0px;margin-left: -112px;color: white;">PAN</p>
+                <div id="slider8of8" style="margin-top: 0px;"></div>
+            </center>
+        </div>
+        <br>
+        <div class="white5" style="background-color: white;width: 151px;height: 40px;margin-left: 1px;margin-top: 697px;">
+            <p style="font-size: small;height: 0px;float: left;margin-left: 20px;margin-top: 2px; color: black;">PFL</p>
+            <p style="font-size: small;height: 0px;float: right;margin-right: 20px;margin-top: 2px; color: black;">MUTE</p><br>
+            <button id="PFL8" style="height: 20px;width: 45px;float: left;margin-left: 10px;background-color: rgb(252, 252, 252);"></button>
+            <button id="MUTE8" style="height: 20px;width: 45px;float: right;margin-right: 16px;background-color: red;"></button>
+        </div>
+
+        <div class="circle" id="LED8" style="background-color:rgba(129, 19, 19, 0.705);margin-top: 15px;"><br>
+            <p style="font-size: small;height: 0px;color: white;text-align: center;margin-left: -12px;margin-top: 0px;">PEAK</p>
+        </div>
+        <br>
+        <input id="range8" class="input-range" orient="vertical" type="range" step="5" value="-30" min="-30" max="10" style="margin-left: 50px;width: 30px;"><br>
+        <p id="range8output" style="color: white;width: 10px;margin-top: -80px;margin-left: 100px;"></p>
+        <div style="background-color: white;width: 152px;height: 31px;margin-left: 1px; position: absolute;margin-top: 71px;">
+            <p style="font-size: medium;height: 0px;color: black;text-align: center;margin-top: 0px;">8</p>
+        </div>
+        
+    </div>
+
+    <div class="row9">
+
+        <center>
+            <p style="font-size: small;height: 3px;color: white;">MONITOR OUT</p>
+            <p style="font-size: small;height: 3px;color: white;width: 5px;margin-left: -221px;margin-top: 37px;">L</p>
+            <img src="/static/images/single_pin.png" style="width: 45px;height: 45px;margin-top: -28px;margin-left: -124px;">
+            <p style="font-size: small;height: 3px;color: white;margin-top: -37px;margin-left: 43px;">R</p>
+            <img src="/static/images/single_pin.png" style="width: 45px;height: 45px;margin-top: -28px;margin-left: 117px;">
+        </center>
+        <div style="background-color: white;width: 276px;margin-left: 1px;height: 1px;margin-top: 15px;"></div>
+        <center>
+            <p style="font-size: small;height: 3px;color: white;width: 5px;margin-left: -238px;margin-top: 5px;">AUX1<br>OUT</p>
+            <img src="/static/images/single_pin.png" class="aux-1" style="width: 45px;height: 45px;margin-top: -15px;margin-left: -124px;">
+            <p style="font-size: small;height: 3px;color: white;margin-top: -50px;margin-left: 36px;">AUX2<br>OUT</p>
+            <img src="/static/images/single_pin.png" style="width: 45px;height: 45px;margin-top: -13px;margin-left: 117px;">
+        </center>
+        <div style="background-color: white;width: 136px;margin-left: 1px;height: 33px;margin-top: 2px;">
+            <p style="text-align: center;font-size: large;margin-top: 5px;">STEREO 1</p>
+        </div>
+        <div style="background-color: white;width: 139px;margin-left: 138px;height: 33px;margin-top: -38px;">
+            <p style="text-align: center;font-size: large;margin-top: 5px;">STEREO 2</p>
+        </div>
+        <center>
+            <p style="font-size: small;height: 3px;color: white;width: 5px;margin-left: -221px;margin-top: 14px;">L</p>
+            <img src="/static/images/single_pin.png" style="width: 45px;height: 45px;margin-top: -28px;margin-left: -124px;">
+            <p style="font-size: small;height: 3px;color: white;margin-top: -37px;margin-left: 43px;">L</p>
+            <img src="/static/images/single_pin.png" style="width: 45px;height: 45px;margin-top: -28px;margin-left: 117px;">
+        </center>
+        <center>
+            <p style="font-size: small;height: 3px;color: white;width: 5px;margin-left: -256px;margin-top: -12px;">[MONO]</p>
+            <p style="font-size: small;height: 3px;color: white;margin-top: -15px;margin-left: 43px;">[MONO]</p>
+        </center><br>
+        <center>
+            <p style="font-size: small;height: 3px;color: white;width: 5px;margin-left: -221px;margin-top: 14px;">R</p>
+            <img src="/static/images/single_pin.png" style="width: 45px;height: 45px;margin-top: -28px;margin-left: -124px;">
+            <p style="font-size: small;height: 3px;color: white;margin-top: -37px;margin-left: 43px;">R</p>
+            <img src="/static/images/single_pin.png" style="width: 45px;height: 45px;margin-top: -28px;margin-left: 117px;">
+        </center><br><br><br><br>
+
+        <center>
+            <p style="font-size: small;height: 3px;margin-left: -224px;color: white;margin-top: 28px;">GAIN</p>
+            <div id="slider9of1" style="margin-left: -133px;"></div>
+            <p style="font-size: small;height: 3px;margin-left: 40px;margin-top: -90px; color: white;">GAIN</p>
+            <div id="slider10of1" style="margin-left: 130px;"></div>
+        </center>
+        <div style="background-color: white;width: 276px;margin-left: 1px;height: 10px;margin-top: 15px;"></div>
+        <center>
+            <p style="font-size: small;height: 3px;margin-left: -224px;color: white;margin-top: 20px;">HF</p>
+            <div id="slider9of2" style="margin-left: -133px;"></div>
+            <p style="font-size: small;height: 3px;margin-left: 40px;margin-top: -90px; color: white;">HF</p>
+            <div id="slider10of2" style="margin-left: 130px;"></div>
+        </center>
+        <div style="background-color: white;width: 276px;margin-left: 1px;height: 10px;margin-top: 16px;"></div>
+        <center>
+            <p style="font-size: small;height: 3px;margin-left: -224px;color: white;margin-top: 11px;">LF</p>
+            <div id="slider9of3" style="margin-left: -133px;"></div>
+            <p style="font-size: small;height: 3px;margin-left: 40px;margin-top: -90px; color: white;">LF</p>
+            <div id="slider10of3" style="margin-left: 130px;"></div>
+        </center>
+        <div style="background-color: white;width: 276px;margin-left: 1px;height: 3px;margin-top: 15px;"></div>
+        <center>
+            <p style="font-size: small;height: 3px;margin-left: -224px;color: white;margin-top: 11px;">AUX1</p>
+            <div id="slider9of4" style="margin-left: -133px;"></div>
+            <p style="font-size: small;height: 3px;margin-left: 40px;margin-top: -90px; color: white;">AUX1</p>
+            <div id="slider10of4" style="margin-left: 130px;"></div><br>
+            <p style="font-size: small;height: 3px;margin-left: -224px;color: white;margin-top: -9px;">AUX2</p>
+            <div id="slider9of5" style="margin-left: -133px;"></div>
+            <p style="font-size: small;height: 3px;margin-left: 40px;margin-top: -90px; color: white;">AUX2</p>
+            <div id="slider10of5" style="margin-left: 130px;"></div><br>
+            <p style="font-size: small;height: 3px;margin-left: -224px;color: white;margin-top: -9px;">BAL</p>
+            <div id="slider9of6" style="margin-left: -133px;"></div>
+            <p style="font-size: small;height: 3px;margin-left: 40px;margin-top: -90px; color: white;">BAL</p>
+            <div id="slider10of6" style="margin-left: 130px;"></div>
+        </center>
+        <div class="white5" style="background-color: white;width: 138px;height: 40px;margin-left: 1px;margin-top: 16px;">
+            <p style="font-size: small;height: 0px;float: left;margin-left: 20px;margin-top: 2px; color: black;">PFL</p>
+            <p style="font-size: small;height: 0px;float: right;margin-right: 20px;margin-top: 2px; color: black;">MUTE</p><br>
+            <button id="PFL8" style="height: 20px;width: 45px;float: left;margin-left: 10px;background-color: rgb(252, 252, 252);"></button>
+            <button id="MUTE8" style="height: 20px;width: 45px;float: right;margin-right: 16px;background-color: red;"></button>
+        </div>
+        <div class="white5" style="background-color: white;width: 137px;height: 40px;margin-left: 140px;margin-top: -40px;">
+            <p style="font-size: small;height: 0px;float: left;margin-left: 20px;margin-top: -35px; color: black;">PFL</p>
+            <p style="font-size: small;height: 0px;float: right;margin-right: 20px;margin-top: -35px; color: black;">MUTE</p><br>
+            <button id="PFL8" style="height: 20px;width: 45px;float: left;margin-left: 10px;background-color: rgb(252, 252, 252);margin-top: -38px;"></button>
+            <button id="MUTE8" style="height: 20px;width: 45px;float: right;margin-right: 16px;background-color: red;margin-top: -38px;"></button>
+        </div>
+
+        <div class="circle" id="LED9" style="background-color:rgba(129, 19, 19, 0.705);margin-top: 15px;margin-left: 59px;"><br>
+            <p style="font-size: small;height: 0px;color: white;text-align: center;margin-left: -12px;margin-top: 0px;">PEAK</p>
+        </div>
+        <div class="circle" id="LED10" style="background-color:rgba(129, 19, 19, 0.705);margin-top: -49px;margin-left: 205px;"><br>
+            <p style="font-size: small;height: 0px;color: white;text-align: center;margin-left: -12px;margin-top: 0px;">PEAK</p>
+        </div>
+        <br>
+        <input id="range9" class="input-range" orient="vertical" type="range" step="5" value="-30" min="-30" max="10" style="margin-left: 40px;width: 30px;"><br>
+        <p id="range9output" style="color: white;width: 10px;margin-top: -80px;margin-left: 90px;"></p>
+        <input id="range10" class="input-range" orient="vertical" type="range" step="5" value="-30" min="-30" max="10" style="margin-left: 193px;width: 30px;margin-top: -87px;"><br>
+        <p id="range10output" style="color: white;width: 10px;margin-top: -80px;margin-left: 245px;"></p>
+        <div style="background-color: white;width: 276px;height: 30px;margin-left: 1px; position: absolute;margin-top: 71px;">
+            <center><p style="font-size: medium;height: 0px;color: black;text-align: center;margin-top: 0px;float: left;margin-left: 21px;">STEREO 1</p>
+            <p style="font-size: medium;height: 0px;color: black;text-align: center;margin-top: 0px;float: right;margin-right: 21px;">STEREO 2</p></center>
+        </div>
+        
+    </div>
+    <div class="row10">
+        <center>
+            <p style="font-size: small;height: 3px;margin-left: -231px;color: white;margin-top: 0px;">MIX-L</p>
+            <p style="font-size: small;height: 3px;margin-left: 229px;color: white;margin-top: -16px;">MIX-R</p>
+            <img src="/static/images/3pin.png" style="width: 130px;height: 110px;margin-top: -17px;">
+            <img src="/static/images/3pin.png" style="width: 130px;height: 110px;margin-top: -17px;">
+            <p style="font-size: small;height: 3px;margin-left: -160px;color: white;margin-top: -5px;">INSERT</p>
+            <p style="font-size: small;height: 3px;margin-left: 75px;color: white;margin-top: -17px;">INSERT</p>
+        </center>
+        <img src="/static/images/single_pin.png" style="width: 45px;height: 45px;margin-top: 4px;margin-left: 61px;">
+        <img src="/static/images/single_pin.png" style="width: 45px;height: 45px;margin-top: -9px;margin-left: 70px;">
+        <div style="background-color: white;width: 276px;margin-left: 1px;height: 1px;margin-top: 10px;"></div>
+        <p style="font-size: small;height: 3px;color: white;margin-left: 9px;">2 TRACK</p>
+        <center>
+            <img src="/static/images/media_pin.png" style="width: 120px;height: 40px;margin-top: -10px;">
+            <p style="font-size: small;height: 3px;margin-left: -124px;color: white;margin-top: -21px;">L</p>
+            <p style="font-size: small;height: 3px;margin-left: 131px;color: white;margin-top: -17px;">R</p>
+        </center>
+        <div style="background-color: white;width: 276px;margin-left: 1px;height: 1px;margin-top: 23px;"></div>
+        <p style="font-size: small;height: 3px;color: white;margin-left: 9px;">RECORD<br>OUT</p>
+        <center>
+            <img src="/static/images/media_pin.png" style="width: 120px;height: 40px;margin-top: -10px;">
+            <p style="font-size: small;height: 3px;margin-left: -124px;color: white;margin-top: -21px;">L</p>
+            <p style="font-size: small;height: 3px;margin-left: 131px;color: white;margin-top: -17px;">R</p>
+        </center>
+        <div style="background-color: white;width: 276px;margin-left: 1px;height: 1px;margin-top: 23px;"></div>
+        <img src="/static/images/single_pin.png" style="width: 45px;height: 45px;margin-top: 27px;margin-right: 53px;float: right;">
+        <button style="height: 26px;width: 28px;background-color: rgb(250, 58, 58);margin-left: 100px;margin-top: 38px;"></button>
+        <div class="circle" id="LED11" style="background-color:rgba(129, 19, 19, 0.705);margin-top: -27px;margin-left: 57px;"><br>
+            <p style="font-size: small;height: 0px;color: white;text-align: center;margin-left: -12px;margin-top: 0px;">48V</p>
+        </div><br>
+        <p style="font-size: small;height: 3px;margin-left: 25px;color: white;margin-top: -5px;">PHANTOM POWER</p>
+        <p style="font-size: small;height: 3px;margin-left: 182px;color: white;margin-top: -17px;">INSERT</p>
+        <div style="background-color: white;width: 276px;margin-left: 1px;height: 64px;margin-top: 55px;">
+            <p style="font-size: 49px;height: 3px;margin-left: 61px;color: #05445E;margin-top: -17px;-webkit-text-stroke: 3px;">EPM 8</p>
+        </div>
+        <br><br><br><br><br>
+        <center>
+            <p style="font-size: small;height: 3px;margin-left: -210px;color: white;margin-top: 11px;">MONITOR</p>
+            <div id="slider11of1" style="margin-left: -133px;"></div>
+            <p style="font-size: small;height: 3px;margin-left: 40px;margin-top: -90px; color: white;">LEVEL</p>
+            <div id="slider12of1" style="margin-left: 130px;"></div>
+        </center><br><br><br><br>
+        <div class="AUX_MASTERS" style="width: 108px;height: 385px;float: left;margin-top: 5px;border-top:2px solid white;border-right:2px solid white;border-bottom:2px solid white;box-sizing: border-box;">
+            <div style="width: 100%;height: 42px;background-color: white;">
+                <center><p style="font-size: small;height: 5px;margin-top: 0px;">AUX MASTERS</p></center>
+            </div>
+            <center><p style="font-size: small;height: 5px;margin-top: 7px;color: white;">AUX1 PRE</p></center>
+            <center><button id="press1" style="height: 26px;box-sizing: border-box;width: 38px;"></button></center>
+            <center><p style="font-size: small;height: 5px;margin-top: 0px;color: white;">AUX1 POST</p></center><br>
+            <center><p style="font-size: small;height: 5px;margin-top: 0px;color: white;">AUX2 PRE</p></center>
+            <center><button id="press2" style="height: 26px;box-sizing: border-box;width: 38px;"></button></center>
+            <center><p style="font-size: small;height: 5px;margin-top: 0px;color: white;">AUX2 POST</p></center><br>
+            <div style="width: 100%;height: 37px;background-color: white;">
+                <center><p style="font-size: small;height: 5px;margin-top: 0px;">2 TRACK</p></center>
+            </div><br>
+            <center><button id="monitor" style="height: 26px;box-sizing: border-box;width: 38px;"></button></center>
+            <center><p style="font-size: small;height: 5px;margin-top: 0px;color: white;">MONITOR</p></center><br>
+            <center><button id="to_mix" style="height: 26px;box-sizing: border-box;width: 38px;"></button></center>
+            <center><p style="font-size: small;height: 5px;margin-top: 0px;color: white;">TO MIX</p></center>
+        </div>
+        
+        <div class="AUX_MASTERS" style="width: 170px;height: 385px;float: right;margin-top: 5px;box-sizing: border-box;border-bottom:2px solid white;">
+            <center><p style="font-size: small;height: 5px;margin-top: 50px;color: white;margin-left: 19px;">MIX/SOLO</p></center>
+<!-- //////////////////////////////////////////////////////////////  LED  /////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <div style="width: 100%;height: 26px;">
+                <center>
+                <div class="circle" id="mix1" style="background-color:rgba(129, 19, 19, 0.705);float: left;height: 10px;margin-left: 65px;margin-top: 4px;"></div>
+                <p style="font-size: small;height: 5px;margin-top: 0px;color: white;width: 2px;">16</p>
+                <div class="circle" id="solo1" style="background-color:rgba(129, 19, 19, 0.705);float: right;height: 10px;margin-right: 51px;margin-top: -14px;"></div>
+                </center>
+            </div>
+
+            <div style="width: 100%;height: 26px;">
+                <center>
+                <div class="circle" id="mix2" style="background-color:rgba(129, 19, 19, 0.705);float: left;height: 10px;margin-left: -9px;margin-top: 4px;"></div>
+                <p style="font-size: small;height: 5px;margin-top: 0px;color: white;width: 2px;">10</p>
+                <div class="circle" id="solo2" style="background-color:rgba(129, 19, 19, 0.705);float: right;height: 10px;margin-right: -11px;margin-top: -14px;"></div>
+                </center>
+            </div>
+            <div style="width: 100%;height: 26px;">
+                <center>
+                <div class="circle" id="mix3" style="background-color:rgba(188, 209, 2, 0.692);float: left;height: 10px;margin-left: -10px;margin-top: 4px;"></div>
+                <p style="font-size: small;height: 5px;margin-top: 0px;color: white;width: 2px;margin-left: 9px;">6</p>
+                <div class="circle" id="solo3" style="background-color:rgba(188, 209, 2, 0.692);float: right;height: 10px;margin-top: -14px;margin-right: 50px;"></div>
+                </center>
+            </div>
+
+            <div style="width: 100%;height: 26px;">
+                <center>
+                <div class="circle" id="mix4" style="background-color:rgba(188, 209, 2, 0.692);float: left;height: 10px;margin-left: -10px;margin-top: 4px;"></div>
+                <p style="font-size: small;height: 5px;margin-top: 0px;color: white;width: 2px;margin-left: 9px;">3</p>
+                <div class="circle" id="solo4" style="background-color:rgba(188, 209, 2, 0.692);float: right;height: 10px;margin-right: -10px;margin-top: -13px;"></div>
+                </center>
+            </div>
+            <div style="width: 100%;height: 26px;">
+                <center>
+                <div class="circle" id="mix5" style="background-color:rgba(188, 209, 2, 0.692);float: left;height: 10px;margin-left: 66px;margin-top: 4px;"></div>
+                <p style="font-size: small;height: 5px;margin-top: 0px;color: white;width: 2px;margin-left: 9px;">0</p>
+                <div class="circle" id="solo5" style="background-color:rgba(188, 209, 2, 0.692);float: right;height: 10px;margin-right: 50px;margin-top: -13px;"></div>
+                </center>
+            </div>
+
+            <div style="width: 100%;height: 26px;">
+                <center>
+                <div class="circle" id="mix6" style="background-color:rgba(2, 192, 2, 0.705);float: left;height: 10px;margin-left: -10px;margin-top: 4px;"></div>
+                <p style="font-size: small;height: 5px;margin-top: 0px;color: white;width: 2px;">-3</p>
+                <div class="circle" id="solo6" style="background-color:rgba(2, 192, 2, 0.705);float: right;height: 10px;margin-right: -10px;margin-top: -14px;"></div>
+                </center>
+            </div>
+            <div style="width: 100%;height: 26px;">
+                <center>
+                <div class="circle" id="mix7" style="background-color:rgba(2, 192, 2, 0.705);float: left;height: 10px;margin-left: -10px;margin-top: 4px;"></div>
+                <p style="font-size: small;height: 5px;margin-top: 0px;color: white;width: 2px;">-6</p>
+                <div class="circle" id="solo7" style="background-color:rgba(2, 192, 2, 0.705);float: right;height: 10px;margin-right: 50px;margin-top: -14px;"></div>
+                </center>
+            </div>
+
+            <div style="width: 100%;height: 26px;">
+                <center>
+                <div class="circle" id="mix8" style="background-color:rgba(2, 192, 2, 0.705);float: left;height: 10px;margin-left: 66px;margin-top: 4px;"></div>
+                <p style="font-size: small;height: 5px;margin-top: 0px;color: white;width: 2px;">-12</p>
+                <div class="circle" id="solo8" style="background-color:rgba(2, 192, 2, 0.705);float: right;height: 10px;margin-right: -10px;margin-top: -14px;"></div>
+                </center>
+            </div>
+            <div style="width: 100%;height: 26px;">
+                <center>
+                <div class="circle" id="mix9" style="background-color:rgba(2, 192, 2, 0.705);float: left;height: 10px;margin-left: -10px;margin-top: 4px;"></div>
+                <p style="font-size: small;height: 5px;margin-top: 0px;color: white;width: 2px;">-16</p>
+                <div class="circle" id="solo9" style="background-color:rgba(2, 192, 2, 0.705);float: right;height: 10px;margin-right: 50px;margin-top: -14px;"></div>
+                </center>
+            </div>
+
+            <div style="width: 100%;height: 26px;">
+                <center>
+                <div class="circle" id="mix10" style="background-color:rgba(2, 192, 2, 0.705);float: left;height: 10px;margin-left: -10px;margin-top: 4px;"></div>
+                <p style="font-size: small;height: 5px;margin-top: 0px;color: white;width: 2px;">-22</p>
+                <div class="circle" id="solo10" style="background-color:rgba(2, 192, 2, 0.705);float: right;height: 10px;margin-right: -10px;margin-top: -14px;"></div>
+                </center>
+            </div><br>
+
+            <div class="circle" id="POWER" style="background-color:rgba(2, 192, 2, 0.705);float: left;height: 10px;margin-left: 35px;margin-top: 0px;"></div>
+            <div class="circle" id="PFL_ACTIVE" style="background-color:rgba(129, 19, 19, 0.705);float: right;height: 10px;margin-right: 68px;;margin-top: 0px;"></div>
+            <p style="font-size: 10px;height: 5px;margin-top: 0px;color: white;width: 2px;float: left;margin-top: 18px;margin-left: -31px;">POWER</p>
+            <p style="font-size: 10px;height: 5px;margin-top: -32px;color: white;float: right;margin-right:44px;">PFL ACTIVE</p>   
+            <input id="range11" class="input-range" orient="vertical" type="range" step="5" value="-30" min="-30" max="10" style="float: left;margin-top: 46px; width: 10px; margin-left: -56px;margin-top: 46px;">
+            <p id="range11output" style="color: white;width: 10px;margin-top: 149px;margin-left: -11px;"></p>
+            <p id="range12output" style="color: white;width: 10px;margin-top: 5px;margin-top: -34px;margin-left: 137px;"></p>
+            <input id="range12" class="input-range" orient="vertical" type="range" step="5" value="-30" min="-30" max="10" style="float: right;margin-top: -86px;width: 10px; margin-right: 69px;">
+
+            <div style="background-color: white;width: 277px;height: 30px;margin-left: -108px; position: absolute;margin-top: 70px;">
+                <center><p style="font-size: medium;height: 0px;color: black;text-align: center;margin-top: 0px;float: left;margin-left: 51px;">L&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MIX</p>
+                <p style="font-size: medium;height: 0px;color: black;text-align: center;margin-top: 0px;float: right;margin-right: 67px;">R</p></center>
+            </div>
+            
+        </div>
+        
+        
+    </div>
+
+
+</div>
+
+</body>
+</html>

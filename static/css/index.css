@@ -1,0 +1,148 @@
+
+  .header{
+    /* float: center; */
+    width:100%;
+    min-width: 100%;
+    min-height: 90px;
+    height:90px;
+    background-color:white;
+  }
+  .logo{
+    width: 20%;
+    color:#663399;
+    font-size:25px;
+    font-family:verdana;
+    text-align:right;
+    margin-top:0px;
+    float: right;
+    margin:0px;
+    line-height:50px;
+    padding-left:9px;
+  }
+  .virtuallogo{
+    width: 20%;
+    height: 90px;
+    color:#663399;
+    font-size:25px;
+    font-family:verdana;
+    text-align:left;
+    margin-top:0px;
+    float: left;
+    margin:0px;
+    line-height:50px;
+    padding-left:9px;
+  
+  }
+  .img
+  {
+    width:40%;
+    margin: 1%;
+    max-width: 35%;
+    max-height: 55px;
+    height: 55px;
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+  .lable
+  {
+    color: #66ff33;
+    text-align: center;
+    font-size: 0.75vw;
+    background-color: white;
+    width:90%;
+    margin: 1%;
+    max-width: 90%;
+    max-height: 60px;
+    height: 60px;
+    margin-top: 40px;
+    padding-top: 0px;
+  }
+  .img1
+  {
+    width:40%;
+    margin: 1%;
+    max-width: 40%;
+    max-height: 100px;
+    height: 100px;
+    margin-top: -18px;
+    padding-top: 0px;
+  }
+  
+
+.dropdown {
+    position: relative;
+    margin-right: 390px;
+    margin-top: 40px;
+    display: inline-block;
+    font-size: 20px;
+    /* border: 1px solid rgb(0, 0, 0); */
+    text-align: center;
+
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: underline;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+.row{
+  width: 8.62%;
+  height: 1430px;
+  min-height: 1430px;
+  max-height:1430px ;
+  background-color: #05445E;
+  float: left;
+  border: 2px solid white;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+.row9{
+  width: 15.5%;
+  height: 1430px;
+  background-color: #05445E;
+  float: left;
+  border: 2px solid white;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+.row10{
+  width: 15.5%;
+  height: 1430px;
+  background-color: #05445E;
+  float: left;
+  border: 2px solid white;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
